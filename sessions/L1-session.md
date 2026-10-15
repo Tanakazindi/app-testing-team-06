@@ -15,7 +15,7 @@ Time box: 40 minutes
 
 ## Product model (from step 1)
 
-- Visitor can: Browse products, open product details, adjust the price range, sort alphabetically or by CO2 rating, filter by category, sustainability and brand, and access the contact page and bug hunting guide.
+- Visitor can: Browse products, open product details, add products to cart, adjust the price range, sort alphabetically or by CO2 rating, filter by category, sustainability and brand, and access the contact page and bug hunting guide.
 - Logged-in customer can: Access their account to manage their profile, favourites and orders, and access messages and invoices.
 - Administrator can: View sales charts and recent orders, inspect order information and update order statuses.
 - Where money appears: Product prices appear in the homepage catalogue and on individual product pages. The cart displays item prices, item totals and the overall total. The team also identified an invoices section in the customer account.
@@ -26,6 +26,7 @@ Time box: 40 minutes
 | # | Mark | Area | What happened | How to get back to it |
 |---|------|------|---------------|-----------------------|
 | 1 | ANOMALY | Cart | Combination Pliers has quantity 1 and unit price $14.15, but its item total displays $00.00. The overall cart total displays $14.15. Observed by Tanaka Zindi. | Observed at /#/checkout with one Combination Pliers in the cart. [Confirm the account used and exact steps taken to reach this state.] |
+
 
 [Add each member's actual observations using ANOMALY, QUESTION, NOTE or BLOCKED. Identify the observer in each entry.]
 
