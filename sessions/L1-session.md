@@ -1,6 +1,6 @@
 # Session L1 — Team 06
 
-Date: [Date of the testing session]
+Date: [14/10/2026]
 Build under test: Toolshop — with-bugs
 URL: https://with-bugs.practicesoftwaretesting.com/
 Participants: Tanaka Zindi, Tanyaradzwa Mrewa, Tinayeshe Mugwagwa, Vimbainashe Aulyn Chidhau
