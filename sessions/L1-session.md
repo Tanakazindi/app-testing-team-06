@@ -8,7 +8,7 @@ Time box: 40 minutes
 
 ## Charters
 
-- Tanaka Zindi: Explore [area] with [resources or test data] to discover [information sought].
+- Tanaka Zindi: Explore the cart and checkout with different product quantities, item removals, and valid and invalid billing and payment inputs to discover problems with totals, validation and completing an order.
 - Tanyaradzwa Mrewa: Explore [area] with [resources or test data] to discover [information sought].
 - Tinayeshe Mugwagwa: Explore [area] with [resources or test data] to discover [information sought].
 - Vimbainashe Aulyn Chidhau: Explore [area] with [resources or test data] to discover [information sought].
