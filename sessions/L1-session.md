@@ -1,3 +1,4 @@
+
 # Session L1 — Team 06
 
 Date: [14/10/2026]
@@ -33,6 +34,9 @@ Time box: 40 minutes
 | 6 | QUESTION | Cart & checkout | Tanaka Zindi: Entering 0, clearing the quantity field or entering 1.5 produces no apparent change to the cart calculation. It is unclear how the cart handles these inputs. | In the cart, try 0, a blank value and 1.5 in a quantity field. Record whether each value remains visible, whether a validation message appears and whether the overall total changes. |
 | 7 | NOTE | Cart & checkout | Tanaka Zindi: Refreshing the page after entering quantity 0 restores the previous quantity. | Change a cart quantity to 0, then refresh the page and inspect the quantity field. |
 | 8 | NOTE | Cart & checkout | Tanaka Zindi: A valid cart quantity of 2 remained saved after clicking outside the field and refreshing the page while logged in. | Set Combination Pliers quantity to 2 in the cart, click outside the field, refresh and inspect the quantity. |
+| 9 | ANOMALY | Checkout — Address | Tanaka Zindi: The green button at the bottom right of the Billing Address step has no visible text, leaving its purpose unclear. | Proceed through checkout to the Address step. Inspect the green button beneath the billing address fields. |
+| 10 | ANOMALY | Checkout — Payment | Tanaka Zindi: Bank transfer reaches an order confirmation displaying an invoice number. Cash on delivery, credit card, buy now pay later, gift card and the option labelled “error 304 missing payment gateway” display a payment-success message but remain on the payment form without showing that order confirmation. | Reach the Payment step, select a payment method, complete the displayed fields as needed and click Confirm. Compare the outcome for each listed method with the bank-transfer outcome. The notes do not establish whether every method was tested through a fresh checkout. |
+| 11 | ANOMALY | Checkout — Payment | Tanaka Zindi: Selecting Cash on Delivery displays bank-name and account-number fields that appear unrelated to paying on delivery. Whether these fields are mandatory was not established. | Proceed to the Payment step, select Cash on Delivery and inspect the bank-name and account-number fields beneath the dropdown. |
 
 
 [Add each member's actual observations using ANOMALY, QUESTION, NOTE or BLOCKED. Identify the observer in each entry.]
