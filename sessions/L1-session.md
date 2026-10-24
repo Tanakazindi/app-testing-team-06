@@ -43,8 +43,13 @@ Time box: 40 minutes
 
 ## Debrief
 
-1. Covered / not covered: [List the areas actually explored and the areas nobody tested.]
-2. What we found: [Summarise the findings and explain whether any appear serious.]
-3. What got in the way: [Describe actual blockers or uncertainties. If none occurred, say so.]
-4. What we learned: [Explain what the team learned about the product.]
-5. Next charter should be: [Suggest the next exploration based on findings or gaps.]
+1. **Covered / not covered:** I explored cart quantities, item removal, adding an existing product again, refreshing the cart, the billing-address step and the available payment methods. I checked the initial cart problems both while logged out and while logged in. I did not test blank billing fields or confirm whether the banking fields shown for Cash on Delivery were mandatory.
+
+2. **What we found:** Individual item totals remained $00.00, although the overall cart total calculated correctly. The X buttons did not remove items. Adding Combination Pliers again produced an error and reset existing quantities to 1, reducing the cart total. The address step had an unlabelled green button. Only bank transfer reached an order confirmation with an invoice number; the other payment options displayed a success message but stayed on the payment form. Cash on Delivery also displayed banking fields. The quantity resets could cause customers to order fewer items than intended, while the missing confirmation leaves the order outcome unclear.
+
+3. **What got in the way:** The broken removal buttons made it difficult to prepare an empty cart. Adding an existing product again reset quantities and disrupted my test setup. The unlabelled address button made its purpose unclear. For some payment methods, I could not establish whether the success message meant an order had been created.
+
+4. **What we learned:** A correct overall cart total does not mean every item total displays correctly. A valid quantity of 2 survived a refresh, but an attempt to add Combination Pliers again reset it to 1. The checkout outcome also differed depending on the payment method selected.
+
+5. **Next charter should be:** Explore billing and payment validation with blank and invalid inputs to discover whether checkout prevents incomplete submissions and clearly explains what needs correcting.
+
