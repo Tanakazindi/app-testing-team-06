@@ -41,10 +41,10 @@ Time box: 40 minutes
 | 13 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: Under 'By category', checking 'Grinder' displays an empty page with no products, while Sander, Saw, and Drill work fine and display items. | Go to Power Tools category -> Check 'Grinder' in the left filter panel. |
 | 14 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: The "Sort" dropdown is misspelled as "Sorth". | Look at the top of the left-hand panel on the homepage/category pages. |
 | 15 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: The search box in the filters panel is misspelled as "Serch", and there is a broken image icon next to the "Search" heading. | Look at the left filter panel on any category page. |
-| 16 | QUESTION | Product Filters | Tanyaradzwa Mrewa: Should out-of-stock items (like the Long Nose Pliers on the homepage) still show up when filtering for specific categories, or should they be hidden? | Go to Hand Tools -> filter by Pliers -> look for Long Nose Pliers. |
-| 17 | NOTE | Product Filters | Tanyaradzwa Mrewa: The Sustainability checkbox ("Show only eco-friendly products") successfully filters the list to only show items with the green ECO badge. | Go to any category -> check the sustainability box. |
-| 18 | NOTE | Product Filters | Tanyaradzwa Mrewa: The Price Range slider resets to 0-200 whenever the page is refreshed or a different category is selected. | Change the price slider -> Refresh the page. |
-
+| 16 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: Checking the 'Other' category filter displays heavy machinery (Excavator, Bulldozer, Crane). All of these items are marked "Out of stock" and do not have an "Add to cart" button. | Go to the homepage -> Check the 'Other' box in the left filter panel. |
+| 17 | QUESTION | Product Filters | Tanyaradzwa Mrewa: Should out-of-stock items (like the Long Nose Pliers or the Excavator) still show up when filtering, or should the filter hide them entirely? | Go to Hand Tools -> filter by Pliers -> look for Long Nose Pliers. |
+| 18 | NOTE | Product Filters | Tanyaradzwa Mrewa: The Sustainability checkbox ("Show only eco-friendly products") successfully filters the list to only show items with the green ECO badge. | Go to any category -> check the sustainability box. |
+| 19 | NOTE | Product Filters | Tanyaradzwa Mrewa: The Price Range slider resets to 0-200 whenever the page is refreshed or a different category is selected. | Change the price slider -> Refresh the page. |
 [Add each member's actual observations using ANOMALY, QUESTION, NOTE or BLOCKED. Identify the observer in each entry.]
 
 ## Debrief
