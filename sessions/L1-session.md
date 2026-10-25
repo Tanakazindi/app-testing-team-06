@@ -10,7 +10,7 @@ Time box: 40 minutes
 ## Charters
 
 - Tanaka Zindi: Explore the cart and checkout with different product quantities, item removals, and valid and invalid billing and payment inputs to discover problems with totals, validation and completing an order.
-- Tanyaradzwa Mrewa: Explore [area] with [resources or test data] to discover [information sought].
+- Tanyaradzwa Mrewa: Explore the product filtering system (price range, sorting by name/price/CO₂ rating, category, brand and sustainability filters) with extreme values, empty selections, contradictory combinations and rapid filter changes to discover filter logic, input-handling and result-correctness problems.
 - Tinayeshe Mugwagwa: Explore [area] with [resources or test data] to discover [information sought].
 - Vimbainashe Aulyn Chidhau: Explore [area] with [resources or test data] to discover [information sought].
 
@@ -37,6 +37,12 @@ Time box: 40 minutes
 | 9 | ANOMALY | Checkout — Address | Tanaka Zindi: The green button at the bottom right of the Billing Address step has no visible text, leaving its purpose unclear. | Proceed through checkout to the Address step. Inspect the green button beneath the billing address fields. |
 | 10 | ANOMALY | Checkout — Payment | Tanaka Zindi: Bank transfer reaches an order confirmation displaying an invoice number. Cash on delivery, credit card, buy now pay later, gift card and the option labelled “error 304 missing payment gateway” display a payment-success message but remain on the payment form without showing that order confirmation. | Reach the Payment step, select a payment method, complete the displayed fields as needed and click Confirm. Compare the outcome for each listed method with the bank-transfer outcome. The notes do not establish whether every method was tested through a fresh checkout. |
 | 11 | ANOMALY | Checkout — Payment | Tanaka Zindi: Selecting Cash on Delivery displays bank-name and account-number fields that appear unrelated to paying on delivery. Whether these fields are mandatory was not established. | Proceed to the Payment step, select Cash on Delivery and inspect the bank-name and account-number fields beneath the dropdown. |
+| 12 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: Under 'By brand', only 'Brand name 1' works. Checking the boxes for Brand name 2 through 10 results in an empty product list. | Go to Power Tools or Hand Tools category -> Check 'Brand name 2' in the left filter panel. |
+| 13 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: Under 'By category', checking 'Grinder' displays an empty page with no products, while Sander, Saw, and Drill work fine and display items. | Go to Power Tools category -> Check 'Grinder' in the left filter panel. |
+| 14 | ANOMALY | Product Filters | Tanyaradzwa Mrewa: The search box in the filters panel is misspelled as "Serch". | Look at the left filter panel on any category page. |
+| 15 | QUESTION | Product Filters | Tanyaradzwa Mrewa: Should out-of-stock items (like the Long Nose Pliers on the homepage) still show up when filtering for specific categories, or should they be hidden? | Go to Hand Tools -> filter by Pliers -> look for Long Nose Pliers. |
+| 16 | NOTE | Product Filters | Tanyaradzwa Mrewa: The Sustainability checkbox ("Show only eco-friendly products") successfully filters the list to only show items with the green ECO badge. | Go to any category -> check the sustainability box. |
+| 17 | NOTE | Product Filters | Tanyaradzwa Mrewa: The Price Range slider resets to 0-200 whenever the page is refreshed or a different category is selected. | Change the price slider -> Refresh the page. |
 
 
 [Add each member's actual observations using ANOMALY, QUESTION, NOTE or BLOCKED. Identify the observer in each entry.]
