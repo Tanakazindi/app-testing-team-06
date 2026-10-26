@@ -101,7 +101,7 @@ Time box: 40 minutes
 4. **What we learned:** The filtering system has backend data issues (missing products) and front-end display bugs (typos, broken icons).
 5. **Next charter should be:** Explore the checkout flow and cart management to discover calculation errors and validation issues.
 
-### Tinayeshe Mugwagwa (session run on 26/10/2026)
+### Tinayeshe Mugwagwa 
 
 1. **Covered / not covered:** I explored registration validation (blank fields, invalid e-mail, short password, an already-registered e-mail and a weak 10-letter password), login with a wrong password, logout followed by the Back button, two simultaneous sessions, profile editing, the contact form with the Messages page, and adding a favourite. I did not test changing the password, "Forgot your Password?", removing favourites, contact attachments or very long messages, or invoices (my new account had no orders). I did not confirm whether repeated failed logins cause a lockout. Across the team, nobody tested the language switcher, the mobile layout or invoice details and downloads.
 2. **What we found (my area):** 28 entries: 13 anomalies, 5 questions and 10 notes (rows 30–57). The most serious are row 34, where registration reveals that an e-mail is registered and shows that account's password hint to anyone, and row 42, where Update Profile always fails with "Resource not found", so customers cannot correct their details. Row 52 is also significant: the Home link opens the contact page, so customers cannot return to the catalogue from the menu. Rows 43, 44 and 51 show account pages displaying the wrong name and city, or "User Data not found".
@@ -111,8 +111,8 @@ Time box: 40 minutes
 
 ### Vimbainashe Aulyn Chidhau (draft from her log rows — Vimbainashe to confirm)
 
-1. **Covered / not covered:** I explored the Categories dropdown (including Undefined and Chainsaws) and the admin area: order status updates, searches on the Brands, Categories, Users and Products pages, stock and price validation when editing products, and the year selection in the sales reports. I did not test creating or deleting brands, categories, users or products, the admin settings or messages pages, or whether changes made in the admin area (such as a negative price) appear on the customer storefront.
-2. **What we found (my area):** Two findings are serious. Updating one order to `COMPLETED` also changed other `SHIPPED` orders to `COMPLETED`, which damages order data the admin did not touch. The product form accepts and saves negative stock and negative prices with no validation error. I also found that the Chainsaws category returns a 404, the Brands search does not filter correctly, the sales reports do not offer 2026 even though 2026 orders exist, and the Undefined category shows no products. The Categories search worked correctly.
-3. **What got in the way:** I could not establish why other orders changed status, so I could not tell how far that problem reaches. Updating an `ON_HOLD` order required a status message, but the form did not explain this before the error. The placeholder brand names made it hard to judge what the Brands search should return.
-4. **What we learned:** Search behaves differently on each admin page: Categories filters correctly, while Brands, Users and Products do not consistently restrict results. Admin forms do not validate obviously invalid values, and a single status update can affect records other than the one being edited.
-5. **Next charter should be:** Explore admin product creation and editing with negative, zero and very large prices and stock values, then check the customer storefront and cart, to discover whether invalid admin data reaches customers.
+1. **Covered / not covered:** 
+2. **What we found (my area):** 
+3. **What got in the way:** 
+4. **What we learned:** 
+5. **Next charter should be:** 
