@@ -69,3 +69,9 @@ Time box: 40 minutes
 
 5. **Next charter should be:** Explore billing and payment validation with blank and invalid inputs to discover whether checkout prevents incomplete submissions and clearly explains what needs correcting.
 
+1. (Tanyaradzwa Mrewa) Covered / not covered: I covered the product filtering system, specifically the brand checkboxes, category filters, price slider, search box, and the sorting dropdown. I did not test combining multiple filters at once or the behavior of the filter panel on mobile screens.
+2. Tanyaradzwa Mrewa) What we found (my area): I found several serious anomalies. 9 out of 10 Brand filters are broken and return empty results. The 'Grinder' category is broken. The 'Other' category shows out-of-stock heavy machinery with no way to buy them. I also found multiple UI typos ("Sorth", "Serch") and a broken image icon.
+3. Tanyaradzwa Mrewa) What got in the way: Placeholder data made it difficult. Because brands are just named "Brand name 2", "Brand name 3", etc., it is hard to know if a filter is broken or if the backend simply has no products for that brand. 
+4. Tanyaradzwa Mrewa) What we learned: I learned that the filtering system has backend data issues (missing products) and front-end display bugs (typos, broken icons). 
+5. Tanyaradzwa Mrewa) Next charter should be: Explore the checkout flow and cart management to discover calculation errors and validation issues.
+
