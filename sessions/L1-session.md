@@ -138,3 +138,10 @@ We learned that testing should examine complete workflows as well as individual 
 **5. Next charter should be:**
 
 Our next charter should focus on **validating important customer and administrator workflows using valid, invalid and boundary-value inputs**. We should explore product filtering with individual and combined filters, registration and profile management with different email and password inputs, cart and checkout behaviour with different quantities and payment methods, and administrator updates involving multiple orders and invalid product values. The aim should be to discover whether the application validates data correctly, protects customer information, returns accurate results, changes only the intended records and clearly communicates errors and successful operations.
+
+
+## Debrief Evidence
+
+The screenshot uploaded provides supporting evidence of our team's debrief discussion.
+
+![Team debrief discussion](debrief-screenshot.png)
