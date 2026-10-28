@@ -1,4 +1,4 @@
-opy everything below the line into a **comment** on the report you are reviewing.
+copy everything below the line into a **comment** on the report you are reviewing.
 Fill it in, then post it. One comment per report reviewed.
 
 You are reviewing the **report**, not the person who wrote it. Say what you would add,
