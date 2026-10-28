@@ -1,1 +1,143 @@
+name: Defect report
+description: Report one defect found in the product under test
+title: "DEFECT: "
+labels: ["defect", "status:new"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you file this report:**
+        1. Search the existing issues in this repository. A duplicate will be closed as a duplicate.
+        2. Reproduce the problem at least once more, from a clean start.
+        3. Keep the `DEFECT:` prefix and replace the rest of the title. `DEFECT: Bug` is not a title.
 
+        A good title names **what** happens and **where**, and is enough on its own to decide
+        whether to open the report. Compare:
+        `DEFECT: Bug in the cart` — useless ·
+        `DEFECT: Cart total does not update after the last item is removed` — usable.
+
+  - type: input
+    id: preconditions
+    attributes:
+      label: Starting state
+      description: Where does the reader begin? Which page, which account, which data. Anyone must be able to get to this state.
+      placeholder: Logged in as customer@practicesoftwaretesting.com, cart contains 2 hammers, browsing the cart page
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered, one action per line, starting from the state above. No commentary — just what you do.
+      placeholder: |
+        1. Click the minus button next to "Claw Hammer" until the quantity reaches 0
+        2. Click the minus button next to "Ball Pein Hammer" until the quantity reaches 0
+        3. Look at the "Total" field at the bottom of the cart
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should happen, and — if you can — where that expectation comes from.
+      placeholder: The total shows 0.00 and the cart shows the empty-cart message.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What actually happens. Describe what you observed, not what you think caused it.
+      placeholder: The total still shows 29.98. The cart is visually empty but the total is unchanged.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      description: How many times out of ten attempts did it happen? Say this honestly — "sometimes" is not information, and an intermittent defect reported as intermittent is far more useful than one reported as always.
+      options:
+        - Always (10 of 10)
+        - Often (7-9 of 10)
+        - Sometimes (3-6 of 10)
+        - Rarely (1-2 of 10)
+        - Seen once, could not reproduce
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser and version, operating system, and which build or URL of the product.
+      placeholder: Chrome 141 / Windows 11 / with-bugs
+    validations:
+      required: true
+
+  - type: input
+    id: testdata
+    attributes:
+      label: Test data and account
+      description: Exact values you used. "Some invalid data" cannot be reproduced.
+      placeholder: Discount code SUMMER-2024, quantity 0, account customer2@practicesoftwaretesting.com
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How badly does this affect the system? This is your judgement as a tester — a property of the defect, not a business decision.
+      options:
+        - Critical - the product or a core function is unusable, no workaround
+        - Major - an important function is broken, a workaround exists
+        - Moderate - a function misbehaves but the task can still be completed
+        - Minor - cosmetic or wording, no effect on the task
+    validations:
+      required: true
+
+  - type: textarea
+    id: severity-reason
+    attributes:
+      label: Why that severity
+      description: One or two sentences. A severity without a reason cannot be argued with, and will be changed by whoever feels strongly.
+      placeholder: A customer can be charged for items that are no longer in the cart, so money is at risk, but they can empty the cart another way.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Drag a screenshot or a short recording into this box. Add a console or network excerpt if it is relevant.
+    validations:
+      required: false
+
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis about the cause (optional)
+      description: If you have a guess, put it here and only here — keep it out of the actual result. You saw the behaviour; you did not see the cause.
+      placeholder: The total may be recalculated only on quantity change, not on item removal.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and this is not a duplicate
+          required: true
+        - label: My title names what happens and where
+          required: true
+        - label: The steps start from a state anyone can reach
+          required: true
+        - label: I gave both an expected and an actual result
+          required: true
+        - label: This report describes exactly one defect
+          required: true
