@@ -1,1 +1,5 @@
-
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question about the module
+    url: https://dl.wsei.pl/course/view.php?id=959
+    about: Questions about the course, deadlines or grading go to the module forum in Moodle, not to the issue tracker.
