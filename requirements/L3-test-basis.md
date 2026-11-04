@@ -1,8 +1,8 @@
 # Test basis L3 — Team 06
 
-Build under test: with-bugs
-Date: 03 November 2026
-Authors: Tanya Mrewa (Story 1), Vimbaynashe Chidau (Story. ), Tanaka Zindi (Story. )
+Build under test: with-bugs  
+Date: 03 November 2026  
+Authors: Tanya Mrewa (Story 1), Vimbaynashe Chidau (Story 2), Tanaka Zindi (Story 3)
 
 ---
 
@@ -36,10 +36,42 @@ Authors: Tanya Mrewa (Story 1), Vimbaynashe Chidau (Story. ), Tanaka Zindi (Stor
 ---
 
 ## Story 2 — [Short name]
-(teammate to write this)
+
+**As a** ... **I want** ... **so that** ...
+
+### Acceptance criteria
+
+- AC-2.1 (scenario) ...
+- AC-2.2 (rule, boundary) ...
+- AC-2.3 (scenario, invalid case) ...
+- AC-2.4 (rule, interaction) ...
+
+### Test conditions
+
+| ID | Condition | From |
+|----|-----------|------|
+| TC-2.1.1 | | AC-2.1 |
+| TC-2.1.2 | | AC-2.1 |
+
+---
 
 ## Story 3 — [Short name]
-(teammate to write this)
+
+**As a** ... **I want** ... **so that** ...
+
+### Acceptance criteria
+
+- AC-3.1 (scenario) ...
+- AC-3.2 (rule, boundary) ...
+- AC-3.3 (scenario, invalid case) ...
+- AC-3.4 (rule, interaction) ...
+
+### Test conditions
+
+| ID | Condition | From |
+|----|-----------|------|
+| TC-3.1.1 | | AC-3.1 |
+| TC-3.1.2 | | AC-3.1 |
 
 ---
 
