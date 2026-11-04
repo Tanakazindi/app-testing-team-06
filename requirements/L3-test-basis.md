@@ -2,7 +2,7 @@
 
 Build under test: with-bugs  
 Date: 03 November 2026  
-Authors: Tanya Mrewa (Story 1), Vimbaynashe Chidau (Story 2), Tanaka Zindi (Story 3)
+Authors: Tanya Mrewa (Story 1), Vimbainashe Chidau (Story 2), Tanaka Zindi (Story 3)
 
 ---
 
