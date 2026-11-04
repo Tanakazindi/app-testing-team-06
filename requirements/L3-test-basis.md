@@ -2,7 +2,7 @@
 
 Build under test: with-bugs  
 Date: 03 November 2026  
-Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zindi (Story 3)
+Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zindi and Tinayeshe Mugwagwa(Story 3)
 
 ---
 
@@ -37,21 +37,41 @@ Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zind
 
 ## Story 2 — [Short name]
 
-**As a** ... **I want** ... **so that** ...
+**As an administrator, I want to create and update product information, including prices and stock quantities, so that customers can see accurate product details and availability.** 
 
 ### Acceptance criteria
 
-- AC-2.1 (scenario) ...
-- AC-2.2 (rule, boundary) ...
-- AC-2.3 (scenario, invalid case) ...
-- AC-2.4 (rule, interaction) ...
+AC-2.1 — Expected path (scenario)
+
+Given an administrator is editing an existing product with valid product information, when they save the changes, then the system saves the updated price and stock quantity and displays a confirmation message.
+
+AC-2.2 — Boundary (rule)
+
+A product's stock quantity must not be lower than zero. A stock quantity of zero represents an out-of-stock product.
+
+AC-2.3 — Invalid case (scenario)
+
+Given an administrator is editing a product, when they enter a negative stock quantity or a negative price and attempt to save, then the system rejects the invalid value and displays a validation message.
+
+AC-2.4 — Interaction (scenario)
+
+Given an administrator is updating the price and stock quantity of one product, when the changes are saved, then the updated values belong only to that product and the information of other products remains unchanged.
 
 ### Test conditions
 
-| ID | Condition | From |
-|----|-----------|------|
-| TC-2.1.1 | | AC-2.1 |
-| TC-2.1.2 | | AC-2.1 |
+
+|ID	|Test condition	|From
+|----|-----------|-----|
+|TC-2.1.1	|Saving valid changes to an existing product's price and stock quantity|	AC-2.1|
+|TC-2.1.2|	Confirmation message after successfully saving product changes|	AC-2.1|
+|TC-2.2.1|	Acceptance of zero as a stock quantity |	AC-2.2|
+|TC-2.2.2|	Rejection of stock quantities below zero |	AC-2.2|
+|TC-2.3.1|	Validation of negative product prices |	AC-2.3|
+|TC-2.3.2|	Validation of negative stock quantities |	AC-2.3|
+|TC-2.3.3	|Display of validation feedback when invalid product values are submitted	|AC-2.3|
+|TC-2.4.1|	Correct association of updated prices with the selected product|	AC-2.4|
+|TC-2.4.2|	Correct association of updated stock quantities with the selected product	|AC-2.4|
+|TC-2.4.3|	Preservation of other products' information after an update|	AC-2.4|
 
 ---
 
@@ -83,3 +103,10 @@ Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zind
 | 2 | Should the "State" dropdown show states or countries when a country is selected? | It should show states/provinces within the selected country. | Affects AC-1.4. If the app is only meant to support Country-level, the field should be removed or renamed. |
 | 3 | What are the password complexity rules? | We assume at least 8 characters. | The form doesn't state the rule. If we don't know it, we can't test invalid passwords (AC-1.1). |
 | 4 | What is the maximum length for the Address field? | We assume 255 characters. | The address field text overflows in the UI. We need to know if there's a character limit. |
+| 5 | Should a product be allowed to have a stock quantity of zero? | Zero is allowed and represents an out-of-stock product. | Determines whether zero should be accepted or rejected during validation. |
+| 6 | Should a product price be allowed to equal zero? | A product must have a positive price. | Determines the minimun acceptable price. |
+| 7 | Should administrators be allowed to enter decimal values for stock quantities? | We assume stock quantities should be whole numbers. | Prevents invalid fractional stock values. |
+| 8 | Should updating one product ever affect the values of another product? | Each product should be updated independently. | Protects the accuracy of product records. |
+
+
+
