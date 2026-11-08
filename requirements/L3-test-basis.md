@@ -75,16 +75,21 @@ Given an administrator is updating the price and stock quantity of one product, 
 
 ---
 
-## Story 3 — [Short name]
+## Story 3 — [Managing the shopping cart]
 
-**As a** ... **I want** ... **so that** ...
+**As a customer I want to change product quantities and remove products from my cart so that I can review the cost and buy only the products and quantities I need.** 
 
 ### Acceptance criteria
 
-- AC-3.1 (scenario) ...
-- AC-3.2 (rule, boundary) ...
-- AC-3.3 (scenario, invalid case) ...
-- AC-3.4 (rule, interaction) ...
+- AC-3.1 (scenario, expected path) Given a cart containing a product, when the customer changes its quantity to a valid positive whole number, then the cart displays the new quantity, the item's line total equals its unit price multiplied by its quantity, and the cart total equals the sum of all item line totals.
+
+- AC-3.2 (rule, boundary) The minimum accepted quantity for a product remaining in the cart is 1. A quantity of 1 must be accepted.
+
+- AC-3.3 (scenario, invalid case) Given a cart containing a product, when the customer submits a quantity of zero, a negative number, a fractional number or a blank value, then the change is rejected, a message explains that a positive whole number is required, and the previously saved quantity and totals remain unchanged.
+
+- AC-3.4 (scenario, removal) Given a cart containing a product, when the customer selects its remove button, then that product's row disappears, the remaining products retain their quantities, and the cart total equals the sum of the remaining item line totals.
+
+- AC-3.5 (scenario, interaction with checkout) Given a cart containing only one product, when the customer removes that product, then the cart displays an empty-cart message and a total of zero, and checkout cannot proceed.
 
 ### Test conditions
 
@@ -107,6 +112,7 @@ Given an administrator is updating the price and stock quantity of one product, 
 | 6 | Should a product price be allowed to equal zero? | A product must have a positive price. | Determines the minimun acceptable price. |
 | 7 | Should administrators be allowed to enter decimal values for stock quantities? | We assume stock quantities should be whole numbers. | Prevents invalid fractional stock values. |
 | 8 | Should updating one product ever affect the values of another product? | Each product should be updated independently. | Protects the accuracy of product records. |
+| 9 | Should entering quantity zero remove the product or reject the change? | Zero is rejected with a validation message, preserving the previous quantity and totals. | Determines the expected behaviour in AC-3.2 and AC-3.3 and prevents zero-unit orders. |
 
 
 
