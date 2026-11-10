@@ -118,6 +118,7 @@ Given an administrator is updating the price and stock quantity of one product, 
 
 ---
 
+
 ## Open questions
 
 | # | Question | What we assumed | Why it matters |
@@ -127,12 +128,10 @@ Given an administrator is updating the price and stock quantity of one product, 
 | 3 | What are the password complexity rules? | We assume at least 8 characters. | The form doesn't state the rule. If we don't know it, we can't test invalid passwords (AC-1.1). |
 | 4 | What is the maximum length for the Address field? | We assume 255 characters. | The address field text overflows in the UI. We need to know if there's a character limit. |
 | 5 | Should a product be allowed to have a stock quantity of zero? | Zero is allowed and represents an out-of-stock product. | Determines whether zero should be accepted or rejected during validation. |
-| 6 | Should a product price be allowed to equal zero? | A product must have a positive price. | Determines the minimun acceptable price. |
+| 6 | Should a product price be allowed to equal zero? | A product must have a positive price. | Determines the minimum acceptable price. |
 | 7 | Should administrators be allowed to enter decimal values for stock quantities? | We assume stock quantities should be whole numbers. | Prevents invalid fractional stock values. |
 | 8 | Should updating one product ever affect the values of another product? | Each product should be updated independently. | Protects the accuracy of product records. |
 | 9 | Should entering quantity zero remove the product or reject the change? | Zero is rejected with a validation message, preserving the previous quantity and totals. | Determines the expected behaviour in AC-3.2 and AC-3.3 and prevents zero-unit orders. |
 | 10 | Is there a maximum quantity per product in the cart (e.g. limited by stock)? | No upper limit is defined, so only the lower boundary is tested. | AC-3.2 covers only the minimum. A stock-based maximum would add an upper boundary and new conditions under AC-3.2. |
 | 11 | Should a removed product stay removed after a page refresh or new login? | Yes, removal is saved, not only hidden on screen. | Determines whether TC-3.4.1 passes if the product reappears after reloading the cart. |
-| 12 | How should checkout be blocked when the cart is empty: hidden/disabled button or an error message? | The proceed-to-checkout control is unavailable. | Needed to decide pass/fail for TC-3.5.3; AC-3.5 states the outcome but not how it is shown. 
-
-ddd.
+| 12 | How should checkout be blocked when the cart is empty: hidden/disabled button or an error message? | The proceed-to-checkout control is unavailable. | Needed to decide pass/fail for TC-3.5.3; AC-3.5 states the outcome but not how it is shown. |
