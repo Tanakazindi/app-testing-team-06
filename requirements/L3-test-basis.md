@@ -2,7 +2,7 @@
 
 Build under test: with-bugs  
 Date: 03 November 2026  
-Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zindi and Tinayeshe Mugwagwa(Story 3)
+Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zindi and Tinayashe Mugwagwa (Story 3)
 
 ---
 
@@ -25,7 +25,7 @@ Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zind
 | TC-1.1.1 | A complete, valid form creates a new account | AC-1.1 |
 | TC-1.1.2 | User is redirected to the "My account" page after successful registration | AC-1.1 |
 | TC-1.2.1 | A valid Date of birth in YYYY-MM-DD format is accepted | AC-1.2 |
-| TC-1.2.2 | A future date (e.g., year 203) is rejected | AC-1.2 |
+| TC-1.2.2 | An invalid or future date (e.g., year 203) is rejected | AC-1.2 |
 | TC-1.3.1 | Registration is rejected if the email is already in use | AC-1.3 |
 | TC-1.3.2 | An error message explains the duplicate email issue | AC-1.3 |
 | TC-1.4.1 | The "State" dropdown is populated correctly based on the selected Country | AC-1.4 |
@@ -35,60 +35,44 @@ Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zind
 
 ---
 
-## Story 2 — [Short name]
+## Story 2 — Managing product information
 
-**As an administrator, I want to create and update product information, including prices and stock quantities, so that customers can see accurate product details and availability.** 
+**As an** administrator, **I want** to create and update product information, including prices and stock quantities, **so that** customers can see accurate product details and availability.
 
 ### Acceptance criteria
 
-AC-2.1 — Expected path (scenario)
-
-Given an administrator is editing an existing product with valid product information, when they save the changes, then the system saves the updated price and stock quantity and displays a confirmation message.
-
-AC-2.2 — Boundary (rule)
-
-A product's stock quantity must not be lower than zero. A stock quantity of zero represents an out-of-stock product.
-
-AC-2.3 — Invalid case (scenario)
-
-Given an administrator is editing a product, when they enter a negative stock quantity or a negative price and attempt to save, then the system rejects the invalid value and displays a validation message.
-
-AC-2.4 — Interaction (scenario)
-
-Given an administrator is updating the price and stock quantity of one product, when the changes are saved, then the updated values belong only to that product and the information of other products remains unchanged.
+- AC-2.1 (scenario, expected path) Given an administrator is editing an existing product with valid product information, when they save the changes, then the system saves the updated price and stock quantity and displays a confirmation message.
+- AC-2.2 (rule, boundary) A product's stock quantity must not be lower than zero. A stock quantity of zero represents an out-of-stock product.
+- AC-2.3 (scenario, invalid case) Given an administrator is editing a product, when they enter a negative stock quantity or a negative price and attempt to save, then the system rejects the invalid value and displays a validation message.
+- AC-2.4 (scenario, interaction) Given an administrator is updating the price and stock quantity of one product, when the changes are saved, then the updated values belong only to that product and the information of other products remains unchanged.
 
 ### Test conditions
 
-
-|ID	|Test condition	|From
-|----|-----------|-----|
-|TC-2.1.1	|Saving valid changes to an existing product's price and stock quantity|	AC-2.1|
-|TC-2.1.2|	Confirmation message after successfully saving product changes|	AC-2.1|
-|TC-2.2.1|	Acceptance of zero as a stock quantity |	AC-2.2|
-|TC-2.2.2|	Rejection of stock quantities below zero |	AC-2.2|
-|TC-2.3.1|	Validation of negative product prices |	AC-2.3|
-|TC-2.3.2|	Validation of negative stock quantities |	AC-2.3|
-|TC-2.3.3	|Display of validation feedback when invalid product values are submitted	|AC-2.3|
-|TC-2.4.1|	Correct association of updated prices with the selected product|	AC-2.4|
-|TC-2.4.2|	Correct association of updated stock quantities with the selected product	|AC-2.4|
-|TC-2.4.3|	Preservation of other products' information after an update|	AC-2.4|
+| ID | Test condition | From |
+|----|----------------|------|
+| TC-2.1.1 | Saving valid changes to an existing product's price and stock quantity | AC-2.1 |
+| TC-2.1.2 | Confirmation message after successfully saving product changes | AC-2.1 |
+| TC-2.2.1 | Acceptance of zero as a stock quantity | AC-2.2 |
+| TC-2.2.2 | Rejection of stock quantities below zero | AC-2.2 |
+| TC-2.3.1 | Validation of negative product prices | AC-2.3 |
+| TC-2.3.2 | Validation of negative stock quantities | AC-2.3 |
+| TC-2.3.3 | Display of validation feedback when invalid product values are submitted | AC-2.3 |
+| TC-2.4.1 | Correct association of updated prices with the selected product | AC-2.4 |
+| TC-2.4.2 | Correct association of updated stock quantities with the selected product | AC-2.4 |
+| TC-2.4.3 | Preservation of other products' information after an update | AC-2.4 |
 
 ---
 
-## Story 3 — [Managing the shopping cart]
+## Story 3 — Managing the shopping cart
 
-**As a customer I want to change product quantities and remove products from my cart so that I can review the cost and buy only the products and quantities I need.** 
+**As a** customer **I want** to change product quantities and remove products from my cart **so that** I can review the cost and buy only the products and quantities I need.
 
 ### Acceptance criteria
 
 - AC-3.1 (scenario, expected path) Given a cart containing a product, when the customer changes its quantity to a valid positive whole number, then the cart displays the new quantity, the item's line total equals its unit price multiplied by its quantity, and the cart total equals the sum of all item line totals.
-
 - AC-3.2 (rule, boundary) The minimum accepted quantity for a product remaining in the cart is 1. A quantity of 1 must be accepted.
-
 - AC-3.3 (scenario, invalid case) Given a cart containing a product, when the customer submits a quantity of zero, a negative number, a fractional number or a blank value, then the change is rejected, a message explains that a positive whole number is required, and the previously saved quantity and totals remain unchanged.
-
 - AC-3.4 (scenario, removal) Given a cart containing a product, when the customer selects its remove button, then that product's row disappears, the remaining products retain their quantities, and the cart total equals the sum of the remaining item line totals.
-
 - AC-3.5 (scenario, interaction with checkout) Given a cart containing only one product, when the customer removes that product, then the cart displays an empty-cart message and a total of zero, and checkout cannot proceed.
 
 ### Test conditions
@@ -117,7 +101,6 @@ Given an administrator is updating the price and stock quantity of one product, 
 | TC-3.5.3 | Checkout cannot proceed from an empty cart | AC-3.5 |
 
 ---
-
 
 ## Open questions
 
