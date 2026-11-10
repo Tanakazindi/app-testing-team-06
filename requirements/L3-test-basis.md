@@ -95,8 +95,26 @@ Given an administrator is updating the price and stock quantity of one product, 
 
 | ID | Condition | From |
 |----|-----------|------|
-| TC-3.1.1 | | AC-3.1 |
-| TC-3.1.2 | | AC-3.1 |
+| TC-3.1.1 | A changed valid quantity is saved and displayed in the cart | AC-3.1 |
+| TC-3.1.2 | The item's line total is recalculated as unit price × new quantity | AC-3.1 |
+| TC-3.1.3 | The cart total is recalculated as the sum of all item line totals | AC-3.1 |
+| TC-3.1.4 | Changing one product's quantity leaves other products' quantities and line totals unchanged | AC-3.1 |
+| TC-3.2.1 | A quantity of 1 (minimum) is accepted | AC-3.2 |
+| TC-3.2.2 | Line total and cart total are correct at the minimum quantity of 1 | AC-3.2 |
+| TC-3.2.3 | The value immediately below the minimum is not accepted | AC-3.2 |
+| TC-3.3.1 | A quantity of zero is rejected | AC-3.3 |
+| TC-3.3.2 | A negative quantity is rejected | AC-3.3 |
+| TC-3.3.3 | A fractional quantity is rejected | AC-3.3 |
+| TC-3.3.4 | A blank quantity is rejected | AC-3.3 |
+| TC-3.3.5 | The rejection message states that a positive whole number is required | AC-3.3 |
+| TC-3.3.6 | The previously saved quantity is unchanged after a rejected change | AC-3.3 |
+| TC-3.3.7 | Line total and cart total are unchanged after a rejected change | AC-3.3 |
+| TC-3.4.1 | Selecting a product's remove button removes that product's row from the cart | AC-3.4 |
+| TC-3.4.2 | Remaining products stay in the cart with their quantities unchanged | AC-3.4 |
+| TC-3.4.3 | The cart total is recalculated as the sum of the remaining line totals | AC-3.4 |
+| TC-3.5.1 | Removing the only product displays an empty-cart message | AC-3.5 |
+| TC-3.5.2 | An empty cart displays a total of zero | AC-3.5 |
+| TC-3.5.3 | Checkout cannot proceed from an empty cart | AC-3.5 |
 
 ---
 
@@ -113,6 +131,6 @@ Given an administrator is updating the price and stock quantity of one product, 
 | 7 | Should administrators be allowed to enter decimal values for stock quantities? | We assume stock quantities should be whole numbers. | Prevents invalid fractional stock values. |
 | 8 | Should updating one product ever affect the values of another product? | Each product should be updated independently. | Protects the accuracy of product records. |
 | 9 | Should entering quantity zero remove the product or reject the change? | Zero is rejected with a validation message, preserving the previous quantity and totals. | Determines the expected behaviour in AC-3.2 and AC-3.3 and prevents zero-unit orders. |
-
-
-
+| 10 | Is there a maximum quantity per product in the cart (e.g. limited by stock)? | No upper limit is defined, so only the lower boundary is tested. | AC-3.2 covers only the minimum. A stock-based maximum would add an upper boundary and new conditions under AC-3.2. |
+| 11 | Should a removed product stay removed after a page refresh or new login? | Yes, removal is saved, not only hidden on screen. | Determines whether TC-3.4.1 passes if the product reappears after reloading the cart. |
+| 12 | How should checkout be blocked when the cart is empty: hidden/disabled button or an error message? | The proceed-to-checkout control is unavailable. | Needed to decide pass/fail for TC-3.5.3; AC-3.5 states the outcome but not how it is shown. |
