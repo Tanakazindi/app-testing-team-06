@@ -133,4 +133,6 @@ Given an administrator is updating the price and stock quantity of one product, 
 | 9 | Should entering quantity zero remove the product or reject the change? | Zero is rejected with a validation message, preserving the previous quantity and totals. | Determines the expected behaviour in AC-3.2 and AC-3.3 and prevents zero-unit orders. |
 | 10 | Is there a maximum quantity per product in the cart (e.g. limited by stock)? | No upper limit is defined, so only the lower boundary is tested. | AC-3.2 covers only the minimum. A stock-based maximum would add an upper boundary and new conditions under AC-3.2. |
 | 11 | Should a removed product stay removed after a page refresh or new login? | Yes, removal is saved, not only hidden on screen. | Determines whether TC-3.4.1 passes if the product reappears after reloading the cart. |
-| 12 | How should checkout be blocked when the cart is empty: hidden/disabled button or an error message? | The proceed-to-checkout control is unavailable. | Needed to decide pass/fail for TC-3.5.3; AC-3.5 states the outcome but not how it is shown. |
+| 12 | How should checkout be blocked when the cart is empty: hidden/disabled button or an error message? | The proceed-to-checkout control is unavailable. | Needed to decide pass/fail for TC-3.5.3; AC-3.5 states the outcome but not how it is shown. 
+
+ddd.
