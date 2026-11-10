@@ -13,7 +13,7 @@ Authors: Tanyaradzwa Mrewa (Story 1), Vimbainashe Chidhau (Story 2), Tanaka Zind
 ### Acceptance criteria
 
 - AC-1.1 (scenario) Given a new user on the registration page, when they fill in all required fields with valid data and click "Register", then the account is created and they are redirected to the "My account" page.
-- AC-1.2 (rule, boundary) The Date of birth field must accept a valid date in YYYY-MM-DD format, and the system must reject dates in the future.
+- AC-1.2 (rule, boundary) The Date of birth field must accept a valid date in YYYY-MM-DD format, and the system must reject invalid or future dates (e.g., year 203 or 2026).
 - AC-1.3 (scenario, invalid case) Given an E-mail address that is already registered in the system, when the user attempts to register, then the account is not created and an error message stating "Email already in use" appears.
 - AC-1.4 (scenario, interaction with another rule) Given the user has selected "Poland" as their Country, when they open the "State" dropdown, then the options displayed should be states/regions within Poland, not a duplicate list of countries.
 - AC-1.5 (scenario, invalid case) Given the registration form is fully filled out, when the user clicks the "Register" button exactly once, then the form submits immediately without requiring a second click.
