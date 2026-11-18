@@ -1,6 +1,6 @@
 **Reviewed:** Team 7 · `requirements/L3-test-basis.md` · commit ___
 **Reviewer:** Vimbainashe Chidhau · **Date:** 18/11/2026
-**Time spent on individual review:** ___ minutes
+**Time spent on individual review:** _25_ minutes
 
 ## A. The five requirement defects
 
@@ -46,17 +46,17 @@ Assessment: Story 1 has good coverage of the main search scenarios.
 
 ## D. Test conditions
 
-- [ ] Conditions name what will be tested without prescribing steps, data or expected results
-- [ ] Every condition traces back to a specific acceptance criterion
-- [ ] Numbering is consistent and would survive a criterion being added later
+- [x] Conditions name what will be tested without prescribing steps, data or expected results.
+- [x] Every condition traces back to a specific acceptance criterion.
+- [x] Numbering is consistent and would survive a criterion being added later.
 - [ ] At least one condition exists that the criteria did not obviously imply — a sign the author
       was deriving rather than transcribing
 
 ## E. Open questions
 
-- [ ] The section exists and is not empty
-- [ ] Each entry says what was assumed, not only what was unclear
-- [ ] Each entry says why it matters
+- [x] The section exists and is not empty.
+- [x] Each entry says what was assumed.
+- [x]Each entry says why it matters.
 
 
 
@@ -65,11 +65,11 @@ Assessment: Story 1 has good coverage of the main search scenarios.
 One of these, with a sentence of reasoning.
 
 - [ ] **Accept** — usable as a test basis as it stands
-- [ ] **Accept with changes** — usable once the findings above are addressed
+- [x] **Accept with changes** — usable once the findings above are addressed
 - [ ] **Rework** — the defects are structural rather than local
 
-_Reasoning:_
+_Reasoning:_ Team 07 has provided three user stories with acceptance criteria and related test conditions. Most criteria are understandable and testable, and the test basis covers expected user interactions. However, some issues need clarification before the test basis can be accepted without changes. These include ambiguous wording in the product search requirements, the contradiction between the maximum cart quantity of 10 in AC-2.2 and 99 in TC-2.2.2, and assumptions in the open questions that are not yet confirmed. Some test conditions also need clearer wording to ensure they can be tested consistently.
 
 ## G. One thing done well
 
-Be specific. "Good document" is not a review.
+Team 07 has provided a good range of acceptance criteria covering both normal and exceptional user behaviour. For example, the product search story includes no-results handling, case-insensitive searches, category filtering, and empty searches. This gives testers several different scenarios to verify rather than focusing only on the successful search path.
