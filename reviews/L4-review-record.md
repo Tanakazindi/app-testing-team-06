@@ -1,5 +1,5 @@
-F. Decision
+## F. Decision
 Decision: Accept with changes Reason: Team 07 has provided three user stories with acceptance criteria and related test conditions. Most criteria are understandable and testable, and the test basis covers expected user interactions. However, some issues need clarification before the test basis can be accepted without changes. These include ambiguous wording in the product search requirements, the contradiction between the maximum cart quantity of 10 in AC-2.2 and 99 in TC-2.2.2, and assumptions in the open questions that are not yet confirmed. Some test conditions also need clearer wording to ensure they can be tested consistently.
 
-G. One thing done well
+## G. One thing done well
 Team 07 has provided a good range of acceptance criteria covering both normal and exceptional user behaviour. For example, the product search story includes no-results handling, case-insensitive searches, category filtering, and empty searches. This gives testers several different scenarios to verify rather than focusing only on the successful search path.
