@@ -1,5 +1,5 @@
 **Reviewed:** Team 7 · `requirements/L3-test-basis.md` · commit ___
-**Reviewer:** Vimbaainashe Chidhau · **Date:** 18/11/2026
+**Reviewer:** Vimbainashe Chidhau · **Date:** 18/11/2026
 **Time spent on individual review:** ___ minutes
 
 ## A. The five requirement defects
@@ -10,12 +10,11 @@ has replaced the author's intent with their own, which is the failure the review
 
 | # | Quoted text | Defect type | Question for the author |
 |---|-------------|-------------|-------------------------|
-| 1 | | ambiguity / contradiction / omission / unverifiable / gold plating | |
-| 2 | | | |
-| 3 | | | |
+| 1 |(AC-1.1) "Given that the product catalogue contains a product with a matching name..." |Ambiguity  | Could you clarify what qualifies as a matching product name? Should the search return products containing the entered term anywhere in their names, or only products whose complete names match the search term? |
+| 2 | (AC-1.5) "Every product displayed in the search results must match the submitted search term"|Ambiguity |Could you clarify how a product is considered to match the submitted search term? For example, should partial matches be accepted, or must the complete product name match? |
+| 3 | (AC-1.4) "Given that the customer has entered a search term and selected a product category, when search is submitted, then the displayed products match both the search term and selected category." |Omission |What should happen if the search term matches existing products, but none of those products belong to the selected category? Should the website display a no-results message or another response? |
 
-*Aim for three to six findings. Fewer than three usually means you skimmed; more than eight
-usually means you are listing preferences rather than defects.*
+
 
 ## B. Testability
 
@@ -23,20 +22,27 @@ Take four acceptance criteria at random and put each through the three questions
 
 | Criterion ID | Observable outcome? | One interpretation? | Finite pass/fail check? | If no — why |
 |---|---|---|---|---|
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
+|AC-1.1 |Yes |No |Yes, after clarification |The meaning of a matching product name is not fully defined |
+|AC-1.3 |Yes |Yes |Yes | |
+|AC-1.4 |Yes |Yes |Yes | |
+|AC-1.5 |Yes |No |Yes, after clarification |The search matching rule does not specify whether partial matches are accepted. |
 
 ## C. Coverage of cases
 
-Does each story go beyond the happy path?
+
 
 | Story | Expected path | Boundary | Invalid case | Interaction with another rule |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1-Product Search |Yes |Yes |Yes |Yes |
+
+Explanation:
+- Expected path: AC-1.1 checks whether matching products are displayed.
+- Boundary: AC-1.3 checks a search that matches exactly one product.
+- Invalid case: AC-1.2 checks a search with no matching products.
+- Interaction: AC-1.4 checks searching while a product category is selected.
+The story also includes empty search behaviour and case-insensitive searching.
+
+Assessment: Story 1 has good coverage of the main search scenarios.
 
 ## D. Test conditions
 
@@ -52,7 +58,7 @@ Does each story go beyond the happy path?
 - [ ] Each entry says what was assumed, not only what was unclear
 - [ ] Each entry says why it matters
 
-*An empty open-questions section on an undocumented product is a finding in itself. Record it.*
+
 
 ## F. Decision
 
