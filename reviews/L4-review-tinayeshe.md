@@ -1,6 +1,6 @@
-**Reviewed:** app-testing-team-7 · `requirements/L3-test-basis.md` · commit 2156b26
+**Reviewed:** Team 07 · `requirements/L3-test-basis.md` · commit 2156b26
 **Reviewers:** Tinayeshe Mugwagwa and Tanaka Zindi · **Date:** 18.11.2026
-**Time spent on review:** 25 minutes
+**Time spent on review:** ___ minutes
 
 *Reviewed jointly by Tinayeshe Mugwagwa and Tanaka Zindi; the findings below were not produced independently.*
 
@@ -19,6 +19,7 @@ has replaced the author's intent with their own, which is the failure the review
 | 5 | "then the matching product is displayed" (AC-1.1) and "Every product displayed in the search results must match the submitted search term" (AC-1.5) | ambiguity | Does "match" mean the full product name, or any product whose name contains the term (e.g. "plier" finding "Combination Pliers")? |
 | 6 | "the website informs the customer that no matching products were found" (AC-1.2) and "An appropriate no-results message is displayed" (TC-1.2.2) | unverifiable | What message text, or what kind of message, counts as "appropriate", so a tester can say pass or fail? |
 | 7 | "Search results display the correct product information." (TC-1.1.2) | unverifiable | Which product information (name, price, image, stock?) must be shown, and correct compared with what? |
+| 8 | "the website requires them to register or log in before allowing the operation" (AC-3.3) vs "The website provides an authentication prompt or explanatory message." (TC-3.3.2) | ambiguity | Is the visitor sent to the login page, or only shown a message? And after they log in, is the product added to favourites automatically, or must they add it again? |
 
 *Aim for three to six findings. Fewer than three usually means you skimmed; more than eight
 usually means you are listing preferences rather than defects.*
@@ -42,7 +43,7 @@ Does each story go beyond the happy path?
 |---|---|---|---|---|
 | 1 | ✓ AC-1.1 | ✓ AC-1.3, AC-1.7 | ✓ AC-1.2 | ✓ AC-1.4 |
 | 2 | ✓ AC-2.1, AC-2.5 | ✓ AC-2.2 (no behaviour stated at the limit) | ✓ AC-2.3 | ✓ AC-2.4 |
-| 3 | | | | |
+| 3 | ✓ AC-3.1, AC-3.2, AC-3.6 | ✓ AC-3.4 | ✓ AC-3.3 | ✓ AC-3.5 |
 
 ## D. Test conditions
 
@@ -52,7 +53,10 @@ Does each story go beyond the happy path?
 - [x] At least one condition exists that the criteria did not obviously imply — a sign the author
       was deriving rather than transcribing (TC-2.5.2 other products stay in the cart; TC-2.6.2 zero-quantity products stay removed after refresh)
 
-Note: TC-2.2.2 uses a maximum of 99 while its source AC-2.2 says 10, so that condition does not match the criterion it traces to.
+Notes:
+- TC-2.2.2 uses a maximum of 99 while its source AC-2.2 says 10, so that condition does not match the criterion it traces to.
+- TC-3.4.2 requires "an appropriate message when a duplicate favourite is attempted", but AC-3.4 only says the product must not appear twice. Should AC-3.4 require a message, and what message?
+- Further derived conditions: TC-3.1.2 (the confirmation must match a real success) and TC-3.6.2 (removing one favourite keeps the others).
 
 ## E. Open questions
 
@@ -60,7 +64,7 @@ Note: TC-2.2.2 uses a maximum of 99 while its source AC-2.2 says 10, so that con
 - [x] Each entry says what was assumed, not only what was unclear
 - [x] Each entry says why it matters
 
-Notes: Open question 1 assumes a maximum of 99, but AC-2.2 states 10, so the assumption has not been carried into the criteria consistently (finding 1). Open question 5 assumes a rejection message that AC-2.3 does not require (finding 3). The entries do not say which story or criterion they relate to.
+Notes: Open question 1 assumes a maximum of 99, but AC-2.2 states 10, so the assumption has not been carried into the criteria consistently (finding 1). Open question 5 assumes a rejection message that AC-2.3 does not require (finding 3). Open question 6 (email verification before using favourites) is still unresolved, and no criterion in Story 3 covers a logged-in but unverified account. The entries do not say which story or criterion they relate to.
 
 ## F. Decision
 
