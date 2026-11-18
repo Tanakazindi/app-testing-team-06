@@ -1,6 +1,6 @@
-**Reviewed:** Team 07 · `requirements/L3-test-basis.md` · commit 2156b26
+**Reviewed:** app-testing-team-7 · `requirements/L3-test-basis.md` · commit 2156b26
 **Reviewers:** Tinayeshe Mugwagwa and Tanaka Zindi · **Date:** 18.11.2026
-**Time spent on review:** ___ minutes
+**Time spent on review:** 25 minutes
 
 *Reviewed jointly by Tinayeshe Mugwagwa and Tanaka Zindi; the findings below were not produced independently.*
 
