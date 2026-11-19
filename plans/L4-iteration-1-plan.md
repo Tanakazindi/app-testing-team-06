@@ -1,7 +1,7 @@
 # Iteration 1 test plan — Team 06
 
-**Build under test:** with-bugs · **Iteration:** 1 · **Dates:** [Insert Today's Date] to [Insert Date Next Week]
-**Roles this iteration:** test lead Tanyaradzwa Mrewa · reporter Vimbainashe Chidhau· product owner Tanaka Zindi · scribe Tinayeshe Mugwagwa 
+**Build under test:** with-bugs · **Iteration:** 1 · **Dates:** 19 November 2026 to 20 November 2026
+**Roles this iteration:** test lead Tanyaradzwa Mrewa · reporter Vimbainashe Chidhau · product owner Tanaka Zindi · scribe Tinayeshe Mugwagwa
 
 ## 1. Scope
 
@@ -9,9 +9,9 @@ What we will test in this iteration, by reference to the test conditions in `req
 
 | We will test | Conditions | Why it is worth the time |
 |---|---|---|
-| Product Search (Story 1) | TC-1.1, TC-1.2, TC-1.3, TC-1.4 | Core user journey; if users cannot find products, the site is unusable. |
-| Shopping Cart Limits (Story 2) | TC-2.1, TC-2.2, TC-2.3 | High risk of bugs (e.g., the contradiction between max 10 vs 99 items). Essential for revenue. |
-| Checkout Flow (Story 3) | TC-3.1, TC-3.2 | The final and most critical step. Bugs here result in lost sales and abandoned carts. |
+| Product Search (Story 1) | TC-1.1.1, TC-1.2.1, TC-1.3.1, TC-1.4.1 | Core user journey; if users cannot find products, the site is unusable. |
+| Shopping Cart Limits (Story 2) | TC-2.1.1, TC-2.2.1, TC-2.2.2, TC-2.3.1 | High risk of bugs (e.g., the contradiction between max 10 vs 99 items). Essential for revenue. |
+| Checkout Flow (Story 3) | TC-3.1.1, TC-3.2.1, TC-3.3.1 | The final and most critical step. Bugs here result in lost sales and abandoned carts. |
 
 ## 2. Out of scope
 
@@ -42,10 +42,10 @@ What must be true before we start executing.
 
 What must be true before we stop. Agreed now, while nobody is under pressure.
 
-- [ ] All planned test conditions (TC-1.x, TC-2.x, TC-3.x) have been executed at least once.
+- [ ] All planned test conditions (TC-1.x, TC-2.x, TC-3.x) have been executed at least once and their results logged in GitHub Issues.
 - [ ] No open "Critical" or "High" severity defects remain in the Product Search or Checkout flows.
 - [ ] At least 90% of all executed test cases pass.
-- [ ] All defects found have been logged in GitHub Issues with clear reproduction steps.
+- [ ] All defects found have been logged in GitHub Issues with clear reproduction steps and a screenshot showing the failure.
 
 *Sanity check: if these could be met on the first day they are too weak; if they could never be met the plan is fiction.*
 
