@@ -1,7 +1,7 @@
 # Iteration 1 test plan — Team 06
 
 **Build under test:** with-bugs · **Iteration:** 1 · **Dates:** [Insert Today's Date] to [Insert Date Next Week]
-**Roles this iteration:** test lead Tanyaradzwa Mrewa · reporter [Name] · product owner [Name] · scribe [Name]
+**Roles this iteration:** test lead Tanyaradzwa Mrewa · reporter Vimbainashe Chidhau· product owner Tanaka Zindi · scribe Tinayeshe Mugwagwa 
 
 ## 1. Scope
 
