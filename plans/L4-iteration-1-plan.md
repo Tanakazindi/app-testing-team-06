@@ -9,9 +9,9 @@ What we will test in this iteration, by reference to the test conditions in `req
 
 | We will test | Conditions | Why it is worth the time |
 |---|---|---|
-| Product Search (Story 1) | TC-1.1.1, TC-1.2.1, TC-1.3.1, TC-1.4.1 | Core user journey; if users cannot find products, the site is unusable. |
-| Shopping Cart Limits (Story 2) | TC-2.1.1, TC-2.2.1, TC-2.2.2, TC-2.3.1 | High risk of bugs (e.g., the contradiction between max 10 vs 99 items). Essential for revenue. |
-| Checkout Flow (Story 3) | TC-3.1.1, TC-3.2.1, TC-3.3.1 | The final and most critical step. Bugs here result in lost sales and abandoned carts. |
+| Account Registration (Story 1) | TC-1.1.1 - TC-1.5.2 | Verifies successful registration, date validation, duplicate email handling, country/state selection and submission behaviour. |
+| Product Information Management (Story 2) | TC-2.1.1 - TC-2.4.3 | Ensures product prices and stock quantities are saved correctly, invalid values are rejected and updates affect only the selected product. |
+| Shopping Cart Management (Story 3) | TC-3.1.1 - TC-3.5.3 | Checks quantity updates, calculation of totals, invalid quantities, item removal and empty-cart behaviour. |
 
 ## 2. Out of scope
 
@@ -19,17 +19,16 @@ The section that decides whether this plan is real. Every exclusion carries a ri
 
 | We will not test | Risk we are accepting | Why we accept it |
 |---|---|---|
-| Admin Panel & Inventory Management | An administrator could accidentally delete a product or misprice it, and we wouldn't catch it before release. | No customer reaches this interface directly. Our limited time is better spent ensuring the customer search and cart flow is flawless. |
-| Cross-browser compatibility (IE11, Safari) | Users on older browsers or Safari may experience UI glitches (e.g., misaligned search bars or broken layouts). | Analytics show 95% of our target demographic uses Chrome/Edge. We accept the minor UI risk to test core logic on our primary platform. |
-| Password reset via email | Users who forget their password may be locked out permanently if the email server fails. | This is a lower-frequency action. We will test the login itself, and accept the risk that the reset flow may have minor bugs until Iteration 2. |
+| Performance and load testing | The application may bcome slow when many users access it simultaneously. | This iterationfocuses on functional correctness rather than system performance. |
+| Security and penetration testing | Vulnerabilities such as unauthorized access or data xposure may remain undetected. | A dedicated security-testing activity is outside this iteration's scope. |
+| External payment processing | Payment failures or transaction errors may not be detected. | Payment processing is not covered by the three user stories selected for this iteration. |
 
 ## 3. Approach
 
-- **Test level(s):** System Testing (end-to-end flows) and Integration Testing (App to Database).
-- **Test types:** Functional testing (black-box) and basic UI/UX validation (visual checks).
+- **Test level(s):** System testing of complete user workflows and integration testing of interactions between application components and stored data.
+- **Test types:** Functional, negative, boundary and regression testing.
 - **Techniques we expect to use:** Boundary Value Analysis (e.g., search terms with 0 results vs 1 result; cart with 1 item vs max limit), Equivalence Partitioning (valid vs. invalid search terms), and Error Guessing.
-- **What, if anything, we automate this iteration:** Nothing. We are executing manual tests first to stabilize the "with-bugs" build and verify our test conditions before writing any automation scripts.
-
+- **What, if anything, we automate this iteration:** Nothing. We are executing manual tests first to stabilize the "with-bugs" build and verify our test conditions. Automation may be considered in a later iteration after the test cases and application behaviour are reviewed. 
 ## 4. Entry criteria
 
 What must be true before we start executing.
@@ -37,6 +36,7 @@ What must be true before we start executing.
 - [ ] The `with-bugs` build is successfully deployed to the test environment and is accessible via the agreed URL.
 - [ ] The test database is populated with basic user accounts and dummy product data (for search testing).
 - [ ] All test conditions in `requirements/L3-test-basis.md` have been reviewed and approved by the team.
+- [ ] The team can access the application and record test results and defects.
 
 ## 5. Exit criteria
 
@@ -47,7 +47,7 @@ What must be true before we stop. Agreed now, while nobody is under pressure.
 - [ ] At least 90% of all executed test cases pass.
 - [ ] All defects found have been logged in GitHub Issues with clear reproduction steps and a screenshot showing the failure.
 
-*Sanity check: if these could be met on the first day they are too weak; if they could never be met the plan is fiction.*
+
 
 ## 6. Risks to the testing itself
 
