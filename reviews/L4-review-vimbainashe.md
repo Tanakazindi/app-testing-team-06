@@ -50,7 +50,7 @@ Assessment: Story 1 has good coverage of the main search scenarios.
 - [x] Every condition traces back to a specific acceptance criterion.
 - [x] Numbering is consistent and would survive a criterion being added later.
 - [ ] At least one condition exists that the criteria did not obviously imply — a sign the author
-      was deriving rather than transcribing
+      was deriving rather than transcribing.
 
 ## E. Open questions
 
