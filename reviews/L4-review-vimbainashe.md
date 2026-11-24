@@ -56,7 +56,7 @@ Assessment: Story 1 has good coverage of the main search scenarios.
 
 - [x] The section exists and is not empty.
 - [x] Each entry says what was assumed.
-- [x]Each entry says why it matters.
+- [x] Each entry says why it matters.
 
 
 
