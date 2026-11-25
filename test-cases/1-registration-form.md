@@ -1,7 +1,7 @@
 # Test cases — Registration Form
 
 **Traces to:** `requirements/L3-test-basis.md`, Story 1
-**Build:** with-bugs · **Author:** Tanyaradzwa Mrewa · **Reviewed by:** [Teammate Name]
+**Build:** with-bugs · **Author:** Tanyaradzwa Mrewa, Vimbainashe Chidhau · **Reviewed by:** Tanaka Zindi
 
 ---
 
@@ -20,13 +20,19 @@ Case identifiers are unique across the whole team. This form uses `CS-01` to `CS
 
 | Field | Valid partitions | Invalid partitions | Ordered? | Boundaries (2-value) |
 |---|---|---|---|---|
+| First name | 1–50 chars | Empty · 51+ chars | length only | 50, 51 |
+| Last name | 1–50 chars | Empty · 51+ chars | length only | 50, 51 |
 | Email | Correctly formed, not registered | Empty · Missing @ · Already registered | No | not applicable |
 | Password | 8+ chars (Assumption Q3) | Empty · < 8 chars | length only | 7, 8 |
-| Date of birth | YYYY-MM-DD, valid past date | Empty · Wrong format · Future date | yes | 2026-01-01, 2025-12-31 (assuming today is 2025) |
+| Date of birth | YYYY-MM-DD, valid past date | Empty · Wrong format · Future date | yes | (Today's date), (Today's date + 1 day) |
 | Country | Poland (or supported list) | Empty | No | not applicable |
 | State | Valid state for selected country | Empty · Duplicates country name | No | not applicable |
+| Phone | 7–15 digits, optional leading + | Empty · < 7 digits · > 15 digits | length only | 6, 7, 15, 16 |
+| Address | 5–100 chars | Empty · < 5 chars | length only | 4, 5 |
+| Postcode | PL format (NN-NNN) | Empty · Wrong format | length only | 4, 5 |
+| City | 1–50 chars | Empty · 51+ chars | length only | 50, 51 |
 
-**Boundary strategy:** Two-value throughout. We test exactly at the minimum password length (8) and just below it (7). We test the current year's date and the previous year's date for the future-date rule.
+**Boundary strategy:** Two-value throughout. We test exactly at the minimum password length (8) and just below it (7). For the Date of Birth, boundaries are evaluated relative to the execution date (e.g., if executed on 2026-11-24, then 2026-11-25 is the future boundary).
 
 ---
 
@@ -36,7 +42,7 @@ Case identifiers are unique across the whole team. This form uses `CS-01` to `CS
 - **Covers:** TC-1.1.1, TC-1.1.2
 - **Type:** valid
 - **Preconditions:** On the registration page. Email `newuser01@example.com` is not registered.
-- **Data:** Email = `newuser01@example.com`, Password = `Password123!`, DOB = `1995-05-15`, Country = `Poland`, State = `Mazowieckie`, all other fields valid.
+- **Data:** First name = `Tanya`, Last name = `Mrewa`, Email = `newuser01@example.com`, Password = `Password123!`, DOB = `1995-05-15`, Country = `Poland`, State = `Mazowieckie`, Phone = `+48123456789`, Address = `ul. Testowa 1`, Postcode = `00-001`, City = `Warszawa`.
 - **Steps:**
   1. Fill all fields with valid data.
   2. Click "Register" exactly once (Assumption Q1).
@@ -60,7 +66,7 @@ Case identifiers are unique across the whole team. This form uses `CS-01` to `CS
 - **Steps:**
   1. Fill all fields.
   2. Click "Register".
-- **Expected result:** Registration rejected, error message about password length. (Assumption Q3)
+- **Expected result:** Registration rejected, error message about password length. (Assumption Q3: minimum 8 chars).
 
 ### CS-04 — Valid Date of Birth is accepted
 - **Covers:** TC-1.2.1
@@ -74,9 +80,9 @@ Case identifiers are unique across the whole team. This form uses `CS-01` to `CS
 
 ### CS-05 — Future Date of Birth is rejected
 - **Covers:** TC-1.2.2
-- **Type:** invalid
-- **Preconditions:** On the registration page.
-- **Data:** DOB = `2030-01-01` (Future year), all else valid.
+- **Type:** boundary
+- **Preconditions:** On the registration page. Execution date is e.g., 2026-11-24.
+- **Data:** DOB = `2026-11-25` (One day in the future), all else valid.
 - **Steps:**
   1. Fill all fields.
   2. Click "Register".
@@ -95,7 +101,7 @@ Case identifiers are unique across the whole team. This form uses `CS-01` to `CS
 ### CS-07 — Email already in use is rejected
 - **Covers:** TC-1.3.1, TC-1.3.2
 - **Type:** invalid
-- **Preconditions:** An account with `existing@example.com` already exists. On the registration page.
+- **Preconditions:** Register a dummy account `existing@example.com` prior to running this test (or use the pre-seeded account `customer@practicesoftwaretesting.com`). On the registration page.
 - **Data:** Email = `existing@example.com`, all else valid.
 - **Steps:**
   1. Fill all fields.
@@ -151,13 +157,23 @@ Case identifiers are unique across the whole team. This form uses `CS-01` to `CS
   2. Click "Register".
 - **Expected result:** Registration rejected, error stating password is required. (AC-1.1)
 
+### CS-13 — Email missing @ is rejected
+- **Covers:** TC-1.1.1
+- **Type:** invalid
+- **Preconditions:** On the registration page.
+- **Data:** Email = `newuser13example.com` (missing @), all else valid.
+- **Steps:**
+  1. Fill all fields.
+  2. Click "Register".
+- **Expected result:** Registration rejected, error message about invalid email format. (AC-1.1)
+
 ---
 
 ## Coverage
 
 | Condition from L3 | Covered by |
 |---|---|
-| TC-1.1.1 | CS-01, CS-02, CS-03, CS-11, CS-12 |
+| TC-1.1.1 | CS-01, CS-02, CS-03, CS-11, CS-12, CS-13 |
 | TC-1.1.2 | CS-01 |
 | TC-1.2.1 | CS-04 |
 | TC-1.2.2 | CS-05, CS-06 |
