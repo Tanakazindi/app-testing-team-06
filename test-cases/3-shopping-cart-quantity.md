@@ -1,7 +1,7 @@
 # Test cases — Shopping Cart Quantity
 
 **Traces to:** `requirements/L3-test-basis.md`, Story 3
-**Build:** with-bugs · **Author:** Tanyaradzwa Mrewa · **Reviewed by:** [Teammate Name]
+**Build:** with-bugs · **Author:** Tanyaradzwa Mrewa · **Reviewed by:** Vimbainashe Aulyn Chidhau
 
 ---
 
